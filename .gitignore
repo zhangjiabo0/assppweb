@@ -1,0 +1,67 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist
+frontend/dist
+*.tsbuildinfo
+
+# Environment & secrets
+.env
+.env.*
+.dev.vars
+*.pem
+
+# Cloudflare Workers
+.wrangler/
+
+# Editor & OS
+.DS_Store
+.idea
+.vscode-test
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Test & coverage
+coverage
+
+# Misc
+*.tgz
+*.ipa
+*.tipa
+*.pid
+*.pid.lock
+*.seed
+*.lcov
+temp/
+temps/
+
+# AI coding tools
+.claude/
+.cursor/
+.trae/
+.windsurf/
+.codeium/
+.conductor/
+.augment/
+.aider*
+.agent/
+.bolt/
+.lovable/
+.v0/
+.continue/
+.playwright-mcp/
+.mcp.json
+CLAUDE.local.md
+.local/
+
+# Personal infrastructure (never commit)
+references/
+mnt/
+deploy.sh

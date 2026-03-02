@@ -1,0 +1,34 @@
+{
+  "name": "assppweb",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-02-23",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./frontend/dist",
+    "binding": "ASSETS",
+  },
+  "durable_objects": {
+    "bindings": [
+      { "name": "WISP_PROXY", "class_name": "WispProxy" },
+      { "name": "DOWNLOAD_MANAGER", "class_name": "DownloadManager" },
+    ],
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["WispProxy", "DownloadManager"],
+    },
+  ],
+  "kv_namespaces": [{ "binding": "AUTH_KV", "id": "8806295b98ad4a7890a33e0d3366aeb1" }],
+  "r2_buckets": [{ "binding": "IPA_BUCKET", "bucket_name": "assppweb-ipa","preview_bucket_name": "assppweb-ipa" }],
+  "triggers": {
+    "crons": ["0 2 * * *"],
+  },
+  "vars": {
+    "AUTO_CLEANUP_DAYS": "2",
+    "AUTO_CLEANUP_MAX_MB": "8192",
+    // R2_CDN_DOMAIN: R2 public bucket custom domain for CDN-accelerated IPA downloads.
+    // Set to your R2 custom domain (e.g. "cdn.example.com") after connecting it
+    // in Dashboard → R2 → bucket → Settings → Public access → Custom Domains.
+  },
+}
